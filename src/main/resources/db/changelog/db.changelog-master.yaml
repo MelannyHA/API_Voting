@@ -1,0 +1,92 @@
+databaseChangeLog:
+  # - changeSet:
+  #     id: 1
+  #     author: melanny
+  #     changes:
+  #       - createTable:
+  #           tableName: voter
+  #           columns:
+  #             - column:
+  #                 name: id
+  #                 type: BIGINT
+  #                 autoIncrement: true
+  #                 constraints:
+  #                   primaryKey: true
+  #             - column:
+  #                 name: name
+  #                 type: VARCHAR(255)
+  #                 constraints:
+  #                   nullable: false
+  #             - column:
+  #                 name: email
+  #                 type: VARCHAR(255)
+  #                 constraints:
+  #                   nullable: false
+  #                   unique: true
+  #             - column:
+  #                 name: has_voted
+  #                 type: BOOLEAN
+  #                 defaultValueBoolean: false
+
+  # - changeSet:
+  #     id: 2
+  #     author: melanny
+  #     changes:
+  #       - createTable:
+  #           tableName: candidate
+  #           columns:
+  #             - column:
+  #                 name: id
+  #                 type: BIGINT
+  #                 autoIncrement: true
+  #                 constraints:
+  #                   primaryKey: true
+  #             - column:
+  #                 name: name
+  #                 type: VARCHAR(255)
+  #                 constraints:
+  #                   nullable: false
+  #             - column:
+  #                 name: party
+  #                 type: VARCHAR(255)
+  #             - column:
+  #                 name: votes
+  #                 type: INT
+  #                 defaultValueNumeric: 0
+
+  - changeSet:
+      id: 3
+      author: melanny
+      changes:
+        - createTable:
+            tableName: vote
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: voter_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    unique: true  # un votante solo puede aparecer una vez
+              - column:
+                  name: candidate_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: vote
+            baseColumnNames: voter_id
+            constraintName: fk_vote_voter
+            referencedTableName: voter
+            referencedColumnNames: id
+        - addForeignKeyConstraint:
+            baseTableName: vote
+            baseColumnNames: candidate_id
+            constraintName: fk_vote_candidate
+            referencedTableName: candidate
+            referencedColumnNames: id
