@@ -17,7 +17,7 @@ Permite registrar votantes y candidatos, emitir votos únicos y consultar los re
 
 ## Instalación y ejecución
 1. Clonar el repositorio:
-   git clone https://github.com/usuario/voting-api.git
+   git clone https://github.com/MelannyHA/API_Voting.git
    cd voting-api
 
 
