@@ -61,6 +61,5 @@ Los votos se contabilizan automáticamente en el campo votes del candidato.
 <img width="277" height="81" alt="image" src="https://github.com/user-attachments/assets/24646a6e-0909-4ebe-b3ee-0820f6472e36" />
 
 ## Votos y estadísticas (Postman)
-<img width="217" height="137" alt="image" src="https://github.com/user-attachments/assets/f5caff8a-c8dc-4ed3-8048-0baeb8ce7e4e" />
 <img width="313" height="279" alt="image" src="https://github.com/user-attachments/assets/c5de5ff7-3696-480e-8d93-64c15765de70" />
-
+<img width="217" height="137" alt="image" src="https://github.com/user-attachments/assets/f5caff8a-c8dc-4ed3-8048-0baeb8ce7e4e" />
